@@ -30,3 +30,4 @@ services:
     volumes:
       - static:/staticfiles/
       - media:/staticfiles/media/
+#
