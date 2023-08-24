@@ -16,17 +16,17 @@ services:
     env_file: .env
     volumes:
       - static:/backend_static/
-      - media:/app/media/
+      - media:app/media/
   frontend:
     image: eniks1632/kittygram_frontend
     env_file: .env
     command: cp -r /app/build/. /staticfiles/
     volumes:
-      - static:/staticfiles/
+      - static:/frontend_static/
   gateway:
     image: eniks1632/kittygram_gateway
     ports:
       - '9000:80'
     volumes:
-      - static:/app/static/
+      - static:/staticfiles/
       - media:/app/static/media/

@@ -1,3 +1,4 @@
+import json
 import os
 
 
@@ -8,11 +9,11 @@ from pathlib import Path
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 load_dotenv()
+ALLOWED_HOSTS = json.loads(os.getenv('ALLOWED_HOSTS', '[]'))
+
 SECRET_KEY = os.getenv('SECRET_KEY', '657306')
 
 DEBUG = os.getenv('DEBUG', 'False') == 'True'
-
-ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS').split(',')
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -90,7 +91,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = os.getenv('TIME_ZONE')
+TIME_ZONE = 'UTC'
 
 USE_I18N = True
 
