@@ -1,15 +1,12 @@
-import json
 import os
-
-
-from dotenv import load_dotenv
 from pathlib import Path
 
+from dotenv import load_dotenv
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 load_dotenv()
-ALLOWED_HOSTS = json.loads(os.getenv('ALLOWED_HOSTS', '[]'))
+ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS', default='').split()
 
 SECRET_KEY = os.getenv('SECRET_KEY', '657306')
 
