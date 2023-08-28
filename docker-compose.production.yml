@@ -11,7 +11,7 @@ services:
     volumes:
       - pg_data_prod:/var/lib/postgresql/data
   backend:
-    image: eniks1632/kittygram_backend
+    image: eniks1632/kittygram_backend:1.1
     env_file: .env
     volumes:
       - static_volume:/backend_static
