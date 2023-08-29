@@ -6,8 +6,6 @@ volumes:
   media_volume:
 services:
   db:
-    depends_on:
-    - backend
     image: postgres:13.10
     env_file: .env
     volumes:
