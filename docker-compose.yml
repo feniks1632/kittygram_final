@@ -24,6 +24,8 @@ services:
     volumes:
       - static:/frontend_static/
   gateway:
+    depends_on:
+      - backend
     image: kittygram_gateway
     ports:
       - '9000:80'
