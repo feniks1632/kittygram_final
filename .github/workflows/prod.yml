@@ -83,7 +83,7 @@ jobs:
           # Для каждого пересобранного образа 
           # устанавливаем тег latest, чтобы потом
           # на сервере и в docker-compose.yml не указывать версию
-          tags: eniks1632/kittygram_backend:1.2
+          tags: eniks1632/kittygram_backend:1.3
   frontend_tests:
     runs-on: ubuntu-latest
 
